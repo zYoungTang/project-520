@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <embed src="Jason Chen - 爱你.mp3" hidden="true" autostart="true" loop="true">
-    <title>Our Love Story-Download</title>
+    <title>zYoung & xTong - Love Story</title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <style type="text/css">
         @font-face {
@@ -3340,6 +3340,13 @@
 
         function timeElapse(c) {
             var e = Date();
+
+
+            var date1= '2016/05/20 00:00:00';
+            var date2 = new Date();    //结束时间
+            var date3 = date2.getTime() - new Date(date1).getTime();   //时间差的毫秒数
+
+
             var f = (Date.parse(e) - Date.parse(c)) / 1000;
             var g = Math.floor(f / (3600 * 24));
             f = f % (3600 * 24);
@@ -3356,7 +3363,8 @@
             if (f < 10) {
                 f = "0" + f
             }
-            var a = '<span class="digit">' + g + '</span> days <span class="digit">' + b + '</span> hours <span class="digit">' + d + '</span> minutes <span class="digit">' + f + "</span> seconds";
+            // var a = '<span class="digit">' + g + '</span> days <span class="digit">' + b + '</span> hours <span class="digit">' + d + '</span> minutes <span class="digit">' + f + "</span> seconds";
+            var a = '<span class="digit">' + days + '</span> days <span class="digit">' + hours + '</span> hours <span class="digit">' + minutes + '</span> minutes <span class="digit">' + seconds + "</span> seconds";
             $("#elapseClock").html(a)
         }
 
@@ -3390,8 +3398,10 @@
             <span class="space"/><span class="comments">* 我们已经在一起两年了，想起我们从相遇到一起的经历就像昨天刚发生的一样</span><br/>
             <span class="space"/><span class="comments">* 我想用特别的的方式去诉说我们的故事.</span><br/>
             <span class="space"/><span class="comments">*/</span><br/>
-            Boy boy = <span class="keyword">new</span> Boy(<span class="string">"唐子阳"</span>);<br/>
-            Girl girl = <span class="keyword">new</span> Girl(<span class="string">"吴欣桐"</span>);<br/>
+            <span class="keyword">Boy</span> boy = <span class="keyword">new</span> Boy(<span
+                class="string">"唐子阳"</span>);<br/>
+            <span class="keyword">Girl</span> girl = <span class="keyword">new</span> Girl(<span
+                class="string">"吴欣桐"</span>);<br/>
             <span class="comments">// 在2015年暑假的某个下午，男孩和女孩在游戏中认识. </span>
             <br/>
             boy.playGame();
@@ -3407,26 +3417,27 @@
             <span class="placeholder"/>boy.talk_with(girl);<br/>
             }<br/>
             <span class="comments">//后来女孩邀请男孩陪她去逛图书馆和看艺术展</span><br/>
-            Library library =<span class="keyword">new</span> Library();<br/>
+            <span class="keyword">Library</span> library = <span class="keyword">new</span> Library();<br/>
             <span class="keyword">Show</span> show = <span class="keyword">new</span> Show();<br/>
             boy.join(girl, library);<br/>
             boy.join(girl, show);<br/>
             <span class="comments">//男孩很开心可以陪着女孩，他突然发现他心动了</span><br/>
             boy.inlove();<br/>
             <span class="comments">//在2016年5月20日男孩对女孩表白了</span><br/>
-            Love love =<span class="keyword">new</span> Love(boy.heart);<br/>
+            <span class="keyword">Love</span> love =<span class="keyword">new</span> Love(boy.heart);<br/>
             <span class="comments">//让男孩惊喜的是女孩接受了</span><br/>
             girl.accept(love);<br/>
             <span class="comments">//在之后日子里男孩和女孩在一起很开心</span><br/>
             <span class="comments">//但是也经常惹女孩生气不断地向她道歉</span><br/>
-            <span class="keyword">for</span>(int i = 0 ; i < n ; i++ ){<br/>
+            <span class="keyword">for</span>(<span class="keyword">int</span> i = 0 ; i < n ; i++ ){<br/>
             <span class="placeholder"/> girl.getAngryWith(boy);<br/>
-            <span class="placeholder"/> Apology apology =<span class="keyword"> new</span> Apology(boy.heart);<br/>
+            <span class="placeholder"/> <span class="keyword">Apology</span> apology = <span class="keyword">new</span>
+            Apology(boy.heart);<br/>
             <span class="placeholder"/> girl.accept(apology);<br/>
             }<br/>
             <span class="comments">//后来男孩决定要为了女孩的幸福去努力</span><br/>
             <span class="keyword">while</span>(true){<br/>
-            <span class="placeholder"/>boy.work_hard(girl.happy);<br/>
+            <span class="placeholder"/>boy.work_hard_for(girl);<br/>
             }
             <!--<span class="comments">// Since then, I ask you for the reason.</span><br/>-->
             <!--<span class="keyword">var</span> reason=i.ask(u);<br/>-->
@@ -3521,6 +3532,7 @@
             }, 500);
             startHeartAnimation();
         }, 101000);
+        // }, 1000);
     }
 </script>
 </body>
@@ -10374,7 +10386,7 @@
     function timeElapse(c) {
         var e = Date();
         var f = (Date.parse(e) - Date.parse(c)) / 1000;
-        var g = Math.floor(f / (3600 * 24));
+        var days = Math.floor(f / (3600 * 24))+31;
         f = f % (3600 * 24);
         var b = Math.floor(f / 3600);
         if (b < 10) {
@@ -10389,7 +10401,7 @@
         if (f < 10) {
             f = "0" + f
         }
-        var a = '<span class="digit">' + g + '</span> days <span class="digit">' + b + '</span> hours <span class="digit">' + d + '</span> minutes <span class="digit">' + f + "</span> seconds";
+        var a = '<span class="digit">' + days + '</span> days <span class="digit">' + b + '</span> hours <span class="digit">' + d + '</span> minutes <span class="digit">' + f + "</span> seconds";
         $("#elapseClock").html(a)
     }
 

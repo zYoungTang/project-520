@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    var date1 = '2016/05/20 00:00:00';
+    var date2 = new Date();    //结束时间
+    var time = (date2.getTime() - new Date(date1).getTime()) / 1000;
+    console.log(time);
+    var day = Math.floor(time / 3600 / 24);
+    var hour = Math.floor((time - day * 24 * 3600) / 3600);
+    var minutes = Math.floor((time - day * 24 * 3600 - hour * 3600)/ 60);
+    var seconds = Math.floor(time - day * 24 * 3600 - hour * 3600 - minutes * 60);
+    console.log("时间差： days " + day);
+    console.log("时间差： hour " + hour);
+    console.log("时间差： minutes " + minutes);
+    console.log("时间差： secons " + seconds);
+
+</script>
